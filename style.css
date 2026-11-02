@@ -830,3 +830,34 @@ textarea:focus-visible {
     outline: 3px solid #bde5c8;
     outline-offset: 4px;
 }
+
+/* Layout troubleshooting */
+
+main {
+    display: block;
+    width: 100%;
+}
+
+#about,
+#skills {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+#about .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 40px;
+    align-items: center;
+}
+
+#about .about-grid > * {
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    #about .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
